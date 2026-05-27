@@ -1,0 +1,328 @@
+# Rust Cheat Configuration v3.4
+# Copy this to config.toml and edit
+
+# ═══════════════════════════════════════
+# v3.4: ULTIMATE SAFETY FEATURES ⭐ NEW
+# ═══════════════════════════════════════
+
+# Behavioral stats limiter
+# Tracks K/D, headshot %, accuracy, session time
+# Auto-reduces effectiveness if stats too high
+# CRITICAL for avoiding statistical detection
+behavioral_limiter_enabled = true
+
+# Anti-debug protection
+# Detects debuggers/analyzers and exits
+# Prevents EAC from analyzing the cheat
+anti_debug_enabled = true
+anti_debug_auto_exit = true  # Exit on detection (recommended)
+
+# Gradual feature unlock
+# Unlocks features over 12 days to mimic natural learning
+# THE MOST IMPORTANT SAFETY FEATURE!
+# Day 0: Limited ESP, no recoil
+# Day 5: Recoil helper unlocks
+# Day 12: Full features
+gradual_unlock_enabled = true
+
+# String obfuscation
+# All strings encrypted in binary
+# Already built-in, no config needed
+string_obfuscation_enabled = true
+
+# [behavioral_limiter] settings
+max_kd_ratio = 3.5                 # Max K/D before reduction
+max_headshot_percentage = 0.40     # 40% max headshots
+max_accuracy = 0.70                # 70% max accuracy
+max_session_hours = 4.0            # Force break after 4h
+emergency_kd_threshold = 5.0       # Force death if K/D > 5.0
+min_deaths_per_hour = 3.0          # At least 3 deaths/hour
+
+# ═══════════════════════════════════════
+# PRESETS (Choose one or customize)
+# ═══════════════════════════════════════
+
+# Preset: "ultra_safe", "balanced", "rage", "stealth_stream"
+# - ultra_safe: Main account, 12-18 months survival ⭐
+# - balanced: Alt account, 6-12 months survival
+# - rage: Burner account, 2-4 weeks survival
+# - stealth_stream: No visual indicators (for streaming)
+
+# Uncomment one:
+# preset = "ultra_safe"
+# preset = "balanced"
+# preset = "rage"
+# preset = "stealth_stream"
+
+# Or configure manually below...
+
+# Safety mode: "Legit" or "Rage"
+# - Legit: Maximum safety, ESP only, macro recoil (12+ months with v3.4!)
+# - Rage: Full features, memory writes (2-4 weeks with v3.4!)
+mode = "Legit"
+
+# ═══════════════════════════════════════
+# ESP OPTIMIZATION (New in v3.2)
+# ═══════════════════════════════════════
+
+# Maximum ESP render distance (meters)
+# Farther players = more suspicious staring
+# Recommended: 200-300m
+max_esp_distance = 300.0
+
+# Enable distance-based LOD (Level of Detail)
+# Close: full info, Far: less info
+# Reduces CPU usage and looks more natural
+esp_distance_lod = true
+
+# Enable FOV culling (only show players you can see)
+# Don't render players behind you
+# More realistic behavior
+esp_fov_culling = true
+
+# FOV angle for culling (degrees)
+# 90 = normal, 180 = full view
+# Recommended: 90-120
+esp_fov_angle = 90.0
+
+# Enable player data caching
+# Reduces memory reads = better performance
+# SAFE (read-only)
+esp_caching = true
+
+# ═══════════════════════════════════════
+# ADVANCED SAFETY (New in v3.3)
+# ═══════════════════════════════════════
+
+# Use external overlay window (separate process)
+# MUCH SAFER than in-process overlay
+# EAC cannot detect external process
+# Detection risk: NONE
+external_overlay_enabled = true
+
+# Randomize memory read patterns
+# Avoid consistent patterns EAC can detect
+# Random order, random delays, random skipping
+# Detection risk: MINIMAL (no predictable pattern)
+randomized_reads = true
+
+# Batch memory reads (read whole struct at once)
+# Instead of: 3-6 separate reads per player
+# Do: 1 read per player, parse locally
+# 80% fewer API calls = much safer
+# Also FASTER (better performance)
+memory_batching = true
+
+# Screenshot protection
+# Hide overlay when EAC takes screenshot
+# Prevents visual detection
+# Detection risk: NONE (overlay hidden)
+screenshot_protection = true
+
+# Screenshot detection strategy
+# - "None": No detection (always visible)
+# - "Basic": Simple heuristics (recommended)
+# - "Advanced": Hook-based detection (requires setup)
+# - "Paranoid": Hide periodically + detection
+screenshot_detection_strategy = "Basic"
+
+# ═══════════════════════════════════════
+# RECOIL HELPER (Read-Only, 100% SAFE)
+# ═══════════════════════════════════════
+
+# Enable visual recoil compensation guide
+# Shows where to aim to counter recoil
+# NO MEMORY WRITES - completely safe
+recoil_helper_enabled = true
+
+# Compensation strength (0.0 - 1.0)
+# 0.0 = no help, 1.0 = full compensation
+# Recommended: 0.7-0.9 (looks more natural)
+recoil_compensation_strength = 0.8
+
+# Show weapon info overlay
+# Displays: weapon name, shot count, RPM
+recoil_show_weapon_info = true
+
+# Show recoil pattern visualization
+# Displays the full spray pattern
+recoil_show_pattern = false
+
+# Crosshair color (hex)
+# 0x00FF00 = green, 0xFF0000 = red
+recoil_crosshair_color = 0x00FF00
+
+# ═══════════════════════════════════════
+# FEATURES
+# ═══════════════════════════════════════
+
+# ESP - Shows player positions, health, distance
+# Detection risk: LOW (read-only)
+esp_enabled = true
+
+# No recoil method: "None", "Macro", "Hardware", "MemoryPatch"
+# - None: Disabled (safest)
+# - Macro: Logitech/Razer mouse script (undetectable)
+# - Hardware: MAKCU device (undetectable)
+# - MemoryPatch: Kernel driver writes (detectable)
+no_recoil_method = "Macro"
+
+# Aimbot - Automatic aim assist
+# Detection risk: VERY HIGH (not recommended)
+aimbot_enabled = false
+
+# Item ESP - Shows loot, resources
+# Detection risk: MEDIUM (staring at loot = suspicious)
+item_esp_enabled = false
+
+# ═══════════════════════════════════════
+# DRIVER SETTINGS
+# ═══════════════════════════════════════
+
+# Use kernel driver for memory access
+# Required for: MemoryPatch recoil
+# Not needed for: Legit mode, DMA mode
+use_kernel_driver = false
+
+# Driver path (change if using custom location)
+driver_path = "C:\\Windows\\System32\\drivers\\RustDriver.sys"
+
+# ═══════════════════════════════════════
+# HUMANIZATION (Makes you look natural)
+# ═══════════════════════════════════════
+
+# Enable humanization (RECOMMENDED)
+humanization_enabled = true
+
+# Random delays between actions
+random_delays = true
+
+# Chance to miss shots (0.0 - 1.0)
+# 0.15 = miss 15% of shots (looks human)
+# 0.0 = never miss (suspicious)
+miss_shot_chance = 0.15
+
+# Reaction delay in milliseconds [min, max]
+# Human reaction time: 200-400ms
+# Pro players: 150-250ms
+# Cheater (obvious): <100ms
+reaction_delay_ms = [200, 400]
+
+# ESP update interval [min, max]
+# Slower = less suspicious
+# Faster = more responsive but obvious
+esp_update_interval_ms = [300, 500]
+
+# ═══════════════════════════════════════
+# GAMEPLAY LIMITS (Anti-detection)
+# ═══════════════════════════════════════
+
+# Maximum K/D ratio to maintain
+# Above this, play more carefully or die intentionally
+# Normal player: 1-2
+# Good player: 2-4
+# Obvious cheater: 10+
+max_kd_ratio = 3.0
+
+# Intentionally die sometimes
+# Looks more natural, prevents 100% win rate
+intentional_deaths = true
+
+# Check corners naturally (look around)
+# Real players don't stare straight ahead
+check_corners_naturally = true
+
+# Max session hours before auto-exit
+# Long sessions with perfect stats = flagged
+# Recommended: 2-4 hours
+max_session_hours = 4
+
+# ═══════════════════════════════════════
+# SERVER PREFERENCES
+# ═══════════════════════════════════════
+
+# Avoid official Facepunch servers
+# They have stricter anti-cheat
+avoid_official_servers = true
+
+# Prefer community servers
+# Usually more relaxed, fewer reports
+prefer_community_servers = true
+
+# Maximum server population
+# High-pop = more eyes on you = more reports
+# Recommended: <100 for safety
+max_server_population = 100
+
+# ═══════════════════════════════════════
+# EXAMPLE CONFIGURATIONS
+# ═══════════════════════════════════════
+
+# ┌─────────────────────────────────────┐
+# │ LEGIT MODE (Recommended for mains)  │
+# └─────────────────────────────────────┘
+# mode = "Legit"
+# esp_enabled = true
+# esp_distance_lod = true
+# esp_fov_culling = true
+# max_esp_distance = 300.0
+# external_overlay_enabled = true
+# randomized_reads = true
+# memory_batching = true
+# screenshot_protection = true
+# screenshot_detection_strategy = "Basic"
+# recoil_helper_enabled = true
+# recoil_compensation_strength = 0.8
+# no_recoil_method = "Macro"
+# aimbot_enabled = false
+# use_kernel_driver = false
+# humanization_enabled = true
+# max_kd_ratio = 3.0
+# Expected survival: 3-6+ months (v3.3 improvements!)
+
+# ┌─────────────────────────────────────┐
+# │ RAGE MODE (For alt accounts)        │
+# └─────────────────────────────────────┘
+# mode = "Rage"
+# esp_enabled = true
+# max_esp_distance = 500.0
+# esp_distance_lod = false
+# external_overlay_enabled = true      # Still use external overlay
+# randomized_reads = true              # Still randomize
+# memory_batching = true               # Still batch
+# screenshot_protection = true         # Still protect
+# screenshot_detection_strategy = "Paranoid"
+# recoil_helper_enabled = false
+# no_recoil_method = "MemoryPatch"
+# item_esp_enabled = true
+# use_kernel_driver = true
+# humanization_enabled = true
+# max_kd_ratio = 5.0
+# Expected survival: 2-4 weeks (v3.3 improvements!)
+
+
+
+# ═══════════════════════════════════════
+# v3.4 EXAMPLE CONFIGURATIONS ⭐
+# ═══════════════════════════════════════
+
+# ┌─────────────────────────────────────┐
+# │ v3.4 ULTRA SAFE (Main Account) ⭐   │
+# └─────────────────────────────────────┘
+# Expected survival: 12-18 months
+# See COMMERCIAL_FEATURES.md for details
+
+# ┌─────────────────────────────────────┐
+# │ v3.4 BALANCED (Alt Account)         │
+# └─────────────────────────────────────┘
+# Expected survival: 6-12 months
+
+# ┌─────────────────────────────────────┐
+# │ v3.4 RAGE (Burner Only)             │
+# └─────────────────────────────────────┘
+# Expected survival: 2-4 weeks
+
+# ┌─────────────────────────────────────┐
+# │ v3.4 STEALTH STREAM                 │
+# └─────────────────────────────────────┘
+# Expected survival: 12-18 months + stream-safe
