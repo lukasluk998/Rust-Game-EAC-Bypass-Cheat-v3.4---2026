@@ -218,14 +218,21 @@ preset = "aggressive"
 
 ## 📖 Documentation
 
+### Core v3.4 Guides
 - **[COMMERCIAL_FEATURES.md](COMMERCIAL_FEATURES.md)** - Complete v3.4 guide (500+ lines)
 - **[SAFETY_GUIDE.md](SAFETY_GUIDE.md)** - Safety best practices
+- **[CONTEXT_NEXT_SESSION.md](CONTEXT_NEXT_SESSION.md)** - Full technical docs
+
+### Feature Guides
 - **[EAC_BYPASS.md](EAC_BYPASS.md)** - EAC bypass details
 - **[ESP_OPTIMIZATION.md](ESP_OPTIMIZATION.md)** - ESP performance guide
 - **[RECOIL_HELPER.md](RECOIL_HELPER.md)** - Recoil patterns guide
-- **[CONTEXT_NEXT_SESSION.md](CONTEXT_NEXT_SESSION.md)** - Full technical docs
 
-**Total Documentation: 1800+ lines!**
+### Advanced Techniques (2026) 🔥 NEW
+- **[DMA_HARDWARE_BYPASS.md](DMA_HARDWARE_BYPASS.md)** - Ultimate hardware bypass (DMA cards)
+- **[ADVANCED_DRIVER_TECHNIQUES.md](ADVANCED_DRIVER_TECHNIQUES.md)** - kdmapper, SinMapper, VAD hiding
+
+**Total Documentation: 2200+ lines!**
 
 ---
 
